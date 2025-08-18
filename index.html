@@ -3,57 +3,60 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Klädbutik</title>
+  <title>TrendyWear - Klädbutik</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
-    <h1>✨ Trendiga Kläder ✨</h1>
+    <div class="logo">👕 TrendyWear</div>
     <nav>
-      <ul>
-        <li><a href="#">Hem</a></li>
-        <li><a href="#">Nyheter</a></li>
-        <li><a href="#">Herr</a></li>
-        <li><a href="#">Dam</a></li>
-        <li><a href="#">Rea</a></li>
-      </ul>
+      <a href="#">Hem</a>
+      <a href="#">Produkter</a>
+      <a href="#">Om oss</a>
+      <a href="#">Kontakt</a>
     </nav>
+    <button class="cart-btn" onclick="toggleCart()">🛒 Varukorg (<span id="cart-count">0</span>)</button>
   </header>
 
-  <main>
-    <h2>Våra produkter</h2>
-    <div class="products">
-      <div class="product">
-        <img src="https://images.unsplash.com/photo-1521335629791-ce4aec67dd47?w=500" alt="T-shirt vit">
-        <h3>Klassisk Vit T-shirt</h3>
+  <section class="hero">
+    <h1>Välkommen till TrendyWear</h1>
+    <p>Din destination för moderna kläder till bra priser</p>
+    <a href="#products" class="cta">Kolla in kollektionen</a>
+  </section>
+
+  <section id="products" class="products">
+    <h2>Våra kläder</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="https://picsum.photos/300/400?random=1" alt="T-shirt">
+        <h3>Klassisk T-shirt</h3>
         <p>199 SEK</p>
-        <button onclick="addToCart('Klassisk Vit T-shirt', 199)">Lägg i varukorg</button>
+        <button onclick="addToCart('Klassisk T-shirt',199)">Lägg i varukorg</button>
       </div>
-
-      <div class="product">
-        <img src="https://images.unsplash.com/photo-1520962918287-7448c2878f65?w=500" alt="Jeans">
-        <h3>Blå Jeans</h3>
+      <div class="product-card">
+        <img src="https://picsum.photos/300/400?random=2" alt="Jeans">
+        <h3>Jeans Slim Fit</h3>
         <p>499 SEK</p>
-        <button onclick="addToCart('Blå Jeans', 499)">Lägg i varukorg</button>
+        <button onclick="addToCart('Jeans Slim Fit',499)">Lägg i varukorg</button>
       </div>
-
-      <div class="product">
-        <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=500" alt="Kappa">
-        <h3>Stilren Kappa</h3>
-        <p>899 SEK</p>
-        <button onclick="addToCart('Stilren Kappa', 899)">Lägg i varukorg</button>
+      <div class="product-card">
+        <img src="https://picsum.photos/300/400?random=3" alt="Hoodie">
+        <h3>Mysig Hoodie</h3>
+        <p>399 SEK</p>
+        <button onclick="addToCart('Mysig Hoodie',399)">Lägg i varukorg</button>
       </div>
     </div>
+  </section>
 
-    <section class="cart">
-      <h2>🛒 Varukorg</h2>
-      <ul id="cart-list"></ul>
-      <p id="total">Totalt: 0 SEK</p>
-    </section>
-  </main>
+  <section id="cart" class="cart hidden">
+    <h2>Din Varukorg</h2>
+    <ul id="cart-items"></ul>
+    <p><strong>Total:</strong> <span id="cart-total">0</span> SEK</p>
+    <button onclick="checkout()">Gå till kassan</button>
+  </section>
 
   <footer>
-    <p>&copy; 2025 Trendiga Kläder - Alla rättigheter reserverade</p>
+    <p>© 2025 TrendyWear. Alla rättigheter förbehållna.</p>
   </footer>
 
   <script src="script.js"></script>
