@@ -4,20 +4,29 @@ let total = 0;
 function addToCart(product, price) {
   cart.push({ product, price });
   total += price;
-  updateCart();
+  document.getElementById("cart-count").innerText = cart.length;
+  renderCart();
 }
 
-function updateCart() {
-  const cartList = document.getElementById("cart-list");
-  const totalElement = document.getElementById("total");
-
-  cartList.innerHTML = "";
+function renderCart() {
+  const itemsContainer = document.getElementById("cart-items");
+  itemsContainer.innerHTML = "";
   cart.forEach(item => {
-    const li = document.createElement("li");
+    let li = document.createElement("li");
     li.textContent = `${item.product} - ${item.price} SEK`;
-    cartList.appendChild(li);
+    itemsContainer.appendChild(li);
   });
-
-  totalElement.textContent = `Totalt: ${total} SEK`;
+  document.getElementById("cart-total").innerText = total;
 }
 
+function toggleCart() {
+  document.getElementById("cart").classList.toggle("hidden");
+}
+
+function checkout() {
+  alert("Tack för ditt köp!");
+  cart = [];
+  total = 0;
+  document.getElementById("cart-count").innerText = 0;
+  renderCart();
+}
