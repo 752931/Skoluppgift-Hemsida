@@ -3,76 +3,102 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Klädbutik</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Klädbutiken</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Header -->
-  <header class="header">
-    <div class="logo">Klädbutiken</div>
-    <nav class="nav">
-      <ul>
-        <li><a href="#">Hem</a></li>
-        <li><a href="#">Nyheter</a></li>
-        <li><a href="#">Kampanjer</a></li>
-        <li><a href="#">Om oss</a></li>
-        <li><a href="#">Kontakt</a></li>
-      </ul>
+  <header>
+    <h1>Klädbutiken</h1>
+    <nav>
+      <a href="#">Hem</a>
+      <a href="#">Nyheter</a>
+      <a href="#">Rea</a>
+      <a href="#">Kontakt</a>
     </nav>
-    <div class="cart">🛒 <span id="cart-count">0</span></div>
   </header>
 
-  <!-- Kategorier -->
-  <section class="categories">
-    <h2>Kategorier</h2>
-    <div class="category-grid">
-      <div class="category-card"><img src="https://picsum.photos/300/200?random=1" alt="Hoodies"><p>Hoodies</p></div>
-      <div class="category-card"><img src="https://picsum.photos/300/200?random=2" alt="T-shirts"><p>T-shirts</p></div>
-      <div class="category-card"><img src="https://picsum.photos/300/200?random=3" alt="Jeans"><p>Jeans</p></div>
-      <div class="category-card"><img src="https://picsum.photos/300/200?random=4" alt="Jackor"><p>Jackor</p></div>
-      <div class="category-card"><img src="https://picsum.photos/300/200?random=5" alt="Sneakers"><p>Sneakers</p></div>
-      <div class="category-card"><img src="https://picsum.photos/300/200?random=6" alt="Accessoarer"><p>Accessoarer</p></div>
-      <div class="category-card"><img src="https://picsum.photos/300/200?random=7" alt="Träning"><p>Träning</p></div>
-      <div class="category-card"><img src="https://picsum.photos/300/200?random=8" alt="Rea"><p>Rea</p></div>
+  <section class="hero">
+    <h2>Stil för varje tillfälle</h2>
+    <p>Upptäck vårt breda sortiment av kläder och accessoarer</p>
+    <button>Handla nu</button>
+  </section>
+
+  <section class="products">
+    <!-- Hoodie -->
+    <div class="product">
+      <img src="https://images.pexels.com/photos/4066293/pexels-photo-4066293.jpeg" alt="Hoodie">
+      <h3>Hoodies</h3>
+      <p>Mysiga hoodies i olika färger</p>
+      <p>Från 499 kr</p>
+      <button>Köp</button>
+    </div>
+
+    <!-- Jackor -->
+    <div class="product">
+      <img src="https://images.pexels.com/photos/6311395/pexels-photo-6311395.jpeg" alt="Jacka">
+      <h3>Jackor</h3>
+      <p>Varma jackor för alla säsonger</p>
+      <p>Från 899 kr</p>
+      <button>Köp</button>
+    </div>
+
+    <!-- Skor -->
+    <div class="product">
+      <img src="https://images.pexels.com/photos/2529148/pexels-photo-2529148.jpeg" alt="Sneakers">
+      <h3>Skor</h3>
+      <p>Bekväma och trendiga sneakers</p>
+      <p>Från 699 kr</p>
+      <button>Köp</button>
+    </div>
+
+    <!-- Jeans -->
+    <div class="product">
+      <img src="https://images.pexels.com/photos/1030947/pexels-photo-1030947.jpeg" alt="Jeans">
+      <h3>Jeans</h3>
+      <p>Klassiska jeans för vardag och fest</p>
+      <p>Från 599 kr</p>
+      <button>Köp</button>
+    </div>
+
+    <!-- T-shirts -->
+    <div class="product">
+      <img src="https://images.pexels.com/photos/10026491/pexels-photo-10026491.jpeg" alt="T-shirt">
+      <h3>T-shirts</h3>
+      <p>Enkla och stilrena t-shirts</p>
+      <p>Från 199 kr</p>
+      <button>Köp</button>
+    </div>
+
+    <!-- Kostymer -->
+    <div class="product">
+      <img src="https://images.pexels.com/photos/6975090/pexels-photo-6975090.jpeg" alt="Kostym">
+      <h3>Kostymer</h3>
+      <p>Eleganta kostymer för alla tillfällen</p>
+      <p>Från 1499 kr</p>
+      <button>Köp</button>
+    </div>
+
+    <!-- Accessoarer -->
+    <div class="product">
+      <img src="https://images.pexels.com/photos/3641059/pexels-photo-3641059.jpeg" alt="Klocka och accessoarer">
+      <h3>Accessoarer</h3>
+      <p>Klockor, väskor och smycken</p>
+      <p>Från 299 kr</p>
+      <button>Köp</button>
+    </div>
+
+    <!-- Träningskläder -->
+    <div class="product">
+      <img src="https://images.pexels.com/photos/414029/pexels-photo-414029.jpeg" alt="Träningskläder">
+      <h3>Träningskläder</h3>
+      <p>Funktionella kläder för träning</p>
+      <p>Från 399 kr</p>
+      <button>Köp</button>
     </div>
   </section>
 
-  <!-- Produkter -->
-  <main class="products">
-    <h2>Populära produkter</h2>
-    <div class="product-grid">
-      <div class="product-card">
-        <img src="https://picsum.photos/250/300?random=11" alt="Svart Hoodie">
-        <h3>Svart Hoodie</h3>
-        <p>499 kr</p>
-        <button onclick="addToCart('Svart Hoodie')">Lägg i varukorg</button>
-      </div>
-      <div class="product-card">
-        <img src="https://picsum.photos/250/300?random=12" alt="Vit T-shirt">
-        <h3>Vit T-shirt</h3>
-        <p>199 kr</p>
-        <button onclick="addToCart('Vit T-shirt')">Lägg i varukorg</button>
-      </div>
-      <div class="product-card">
-        <img src="https://picsum.photos/250/300?random=13" alt="Jeans Slim Fit">
-        <h3>Jeans Slim Fit</h3>
-        <p>799 kr</p>
-        <button onclick="addToCart('Jeans Slim Fit')">Lägg i varukorg</button>
-      </div>
-      <div class="product-card">
-        <img src="https://picsum.photos/250/300?random=14" alt="Sneakers">
-        <h3>Sneakers</h3>
-        <p>999 kr</p>
-        <button onclick="addToCart('Sneakers')">Lägg i varukorg</button>
-      </div>
-    </div>
-  </main>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <p>© 2025 Klädbutiken – Alla rättigheter förbehållna</p>
+  <footer>
+    <p>&copy; 2025 Klädbutiken. Alla rättigheter förbehållna.</p>
   </footer>
-
-  <script src="app.js"></script>
 </body>
 </html>
