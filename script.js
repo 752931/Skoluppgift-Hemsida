@@ -1,7 +1,7 @@
 let cartCount = 0;
 
-function addToCart(item) {
+function addToCart(product) {
   cartCount++;
   document.getElementById("cart-count").textContent = cartCount;
-  alert(item + " har lagts till i kundvagnen!");
+  alert(product + " har lagts i varukorgen!");
 }
