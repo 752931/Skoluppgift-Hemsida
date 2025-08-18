@@ -3,57 +3,74 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Klädbutik Online</title>
+  <title>Klädbutik</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <!-- Header -->
   <header class="header">
-    <div class="logo">Klädbutik</div>
+    <div class="logo">Klädbutiken</div>
     <nav class="nav">
-      <a href="#">Nyheter</a>
-      <a href="#">Herr</a>
-      <a href="#">Dam</a>
-      <a href="#">Rea</a>
+      <ul>
+        <li><a href="#">Hem</a></li>
+        <li><a href="#">Nyheter</a></li>
+        <li><a href="#">Kampanjer</a></li>
+        <li><a href="#">Om oss</a></li>
+        <li><a href="#">Kontakt</a></li>
+      </ul>
     </nav>
-    <div class="cart">
-      🛒 <span id="cart-count">0</span>
-    </div>
+    <div class="cart">🛒 <span id="cart-count">0</span></div>
   </header>
 
-  <!-- Banner -->
-  <section class="banner">
-    <h1>Fräscha kläder online</h1>
-    <p>Snabba leveranser • Fri frakt över 499 kr</p>
+  <!-- Kategorier -->
+  <section class="categories">
+    <h2>Kategorier</h2>
+    <div class="category-grid">
+      <div class="category-card"><img src="https://picsum.photos/300/200?random=1" alt="Hoodies"><p>Hoodies</p></div>
+      <div class="category-card"><img src="https://picsum.photos/300/200?random=2" alt="T-shirts"><p>T-shirts</p></div>
+      <div class="category-card"><img src="https://picsum.photos/300/200?random=3" alt="Jeans"><p>Jeans</p></div>
+      <div class="category-card"><img src="https://picsum.photos/300/200?random=4" alt="Jackor"><p>Jackor</p></div>
+      <div class="category-card"><img src="https://picsum.photos/300/200?random=5" alt="Sneakers"><p>Sneakers</p></div>
+      <div class="category-card"><img src="https://picsum.photos/300/200?random=6" alt="Accessoarer"><p>Accessoarer</p></div>
+      <div class="category-card"><img src="https://picsum.photos/300/200?random=7" alt="Träning"><p>Träning</p></div>
+      <div class="category-card"><img src="https://picsum.photos/300/200?random=8" alt="Rea"><p>Rea</p></div>
+    </div>
   </section>
 
   <!-- Produkter -->
   <main class="products">
-    <div class="product">
-      <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=500" alt="T-shirt vit">
-      <h3>Klassisk vit T-shirt</h3>
-      <p class="price">199 kr</p>
-      <button onclick="addToCart('Klassisk vit T-shirt')">Lägg i kundvagn</button>
-    </div>
-
-    <div class="product">
-      <img src="https://images.unsplash.com/photo-1520975918318-6a9f03f0b9a0?w=500" alt="Svart hoodie">
-      <h3>Svart Hoodie</h3>
-      <p class="price">499 kr</p>
-      <button onclick="addToCart('Svart Hoodie')">Lägg i kundvagn</button>
-    </div>
-
-    <div class="product">
-      <img src="https://images.unsplash.com/photo-1539533113208-f6df8cc8b543?w=500" alt="Jeans">
-      <h3>Blå jeans</h3>
-      <p class="price">699 kr</p>
-      <button onclick="addToCart('Blå jeans')">Lägg i kundvagn</button>
+    <h2>Populära produkter</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="https://picsum.photos/250/300?random=11" alt="Svart Hoodie">
+        <h3>Svart Hoodie</h3>
+        <p>499 kr</p>
+        <button onclick="addToCart('Svart Hoodie')">Lägg i varukorg</button>
+      </div>
+      <div class="product-card">
+        <img src="https://picsum.photos/250/300?random=12" alt="Vit T-shirt">
+        <h3>Vit T-shirt</h3>
+        <p>199 kr</p>
+        <button onclick="addToCart('Vit T-shirt')">Lägg i varukorg</button>
+      </div>
+      <div class="product-card">
+        <img src="https://picsum.photos/250/300?random=13" alt="Jeans Slim Fit">
+        <h3>Jeans Slim Fit</h3>
+        <p>799 kr</p>
+        <button onclick="addToCart('Jeans Slim Fit')">Lägg i varukorg</button>
+      </div>
+      <div class="product-card">
+        <img src="https://picsum.photos/250/300?random=14" alt="Sneakers">
+        <h3>Sneakers</h3>
+        <p>999 kr</p>
+        <button onclick="addToCart('Sneakers')">Lägg i varukorg</button>
+      </div>
     </div>
   </main>
 
   <!-- Footer -->
   <footer class="footer">
-    <p>© 2025 Klädbutik Online. Alla rättigheter förbehållna.</p>
+    <p>© 2025 Klädbutiken – Alla rättigheter förbehållna</p>
   </footer>
 
   <script src="app.js"></script>
