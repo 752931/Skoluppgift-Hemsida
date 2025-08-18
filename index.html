@@ -1,64 +1,111 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TrendyWear - Klädbutik</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>StreetLab – Klädbutik</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="StreetLab – Sneakers, hoodies och streetwear. Fri frakt över 699 kr." />
 </head>
 <body>
-  <header>
-    <div class="logo">👕 TrendyWear</div>
-    <nav>
-      <a href="#">Hem</a>
-      <a href="#">Produkter</a>
-      <a href="#">Om oss</a>
-      <a href="#">Kontakt</a>
-    </nav>
-    <button class="cart-btn" onclick="toggleCart()">🛒 Varukorg (<span id="cart-count">0</span>)</button>
+  <!-- Announcement/topbar -->
+  <div class="topbar">
+    Fri frakt över 699 kr • 30 dagar öppet köp
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">STREET<span>LAB</span></div>
+
+      <nav class="main-nav" aria-label="Huvudmeny">
+        <a href="#nyheter">Nyheter</a>
+        <a href="#herr">Herr</a>
+        <a href="#dam">Dam</a>
+        <a href="#sneakers">Sneakers</a>
+        <a href="#rea" class="pill sale">REA</a>
+      </nav>
+
+      <div class="header-actions">
+        <input id="search" type="search" placeholder="Sök produkter..." aria-label="Sök" />
+        <button class="icon-btn" id="cartBtn" aria-label="Öppna varukorg">🛒 <span id="cartCount">0</span></button>
+      </div>
+    </div>
   </header>
 
+  <!-- Hero -->
   <section class="hero">
-    <h1>Välkommen till TrendyWear</h1>
-    <p>Din destination för moderna kläder till bra priser</p>
-    <a href="#products" class="cta">Kolla in kollektionen</a>
-  </section>
-
-  <section id="products" class="products">
-    <h2>Våra kläder</h2>
-    <div class="product-grid">
-      <div class="product-card">
-        <img src="https://picsum.photos/300/400?random=1" alt="T-shirt">
-        <h3>Klassisk T-shirt</h3>
-        <p>199 SEK</p>
-        <button onclick="addToCart('Klassisk T-shirt',199)">Lägg i varukorg</button>
-      </div>
-      <div class="product-card">
-        <img src="https://picsum.photos/300/400?random=2" alt="Jeans">
-        <h3>Jeans Slim Fit</h3>
-        <p>499 SEK</p>
-        <button onclick="addToCart('Jeans Slim Fit',499)">Lägg i varukorg</button>
-      </div>
-      <div class="product-card">
-        <img src="https://picsum.photos/300/400?random=3" alt="Hoodie">
-        <h3>Mysig Hoodie</h3>
-        <p>399 SEK</p>
-        <button onclick="addToCart('Mysig Hoodie',399)">Lägg i varukorg</button>
-      </div>
+    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1600&auto=format&fit=crop" alt="Streetwear look" />
+    <div class="hero-content container">
+      <h1>New Drop: Urban Classics</h1>
+      <p>Oversized hoodies, tech-outerwear och skarpa sneakers.</p>
+      <a href="#products" class="cta">Shoppa kollektionen</a>
     </div>
   </section>
 
-  <section id="cart" class="cart hidden">
-    <h2>Din Varukorg</h2>
-    <ul id="cart-items"></ul>
-    <p><strong>Total:</strong> <span id="cart-total">0</span> SEK</p>
-    <button onclick="checkout()">Gå till kassan</button>
+  <!-- Category pills -->
+  <section class="category-pills container" aria-label="Kategorifilter">
+    <button class="pill active" data-cat="alla">Alla</button>
+    <button class="pill" data-cat="Herr">Herr</button>
+    <button class="pill" data-cat="Dam">Dam</button>
+    <button class="pill" data-cat="Unisex">Unisex</button>
+    <button class="pill" data-cat="Sneakers">Sneakers</button>
+    <select id="sort" class="sort">
+      <option value="pop">Sortera: Populärt</option>
+      <option value="low">Lägst pris</option>
+      <option value="high">Högst pris</option>
+      <option value="new">Nyheter</option>
+    </select>
   </section>
 
-  <footer>
-    <p>© 2025 TrendyWear. Alla rättigheter förbehållna.</p>
+  <!-- Products -->
+  <main id="products" class="container">
+    <h2>Utvalda produkter</h2>
+    <div id="grid" class="product-grid" role="list"></div>
+  </main>
+
+  <!-- Banner -->
+  <section class="banner">
+    <div class="container banner-inner">
+      <div>
+        <h3>Fresh Kicks</h3>
+        <p>Ikoniska silhuetter med moderna material.</p>
+        <a href="#sneakers" class="link-underline">Se sneakers</a>
+      </div>
+      <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1300&auto=format&fit=crop" alt="Sneakers closeup" />
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> StreetLab (demo)</div>
+      <div class="footer-links">
+        <a href="#">Kundservice</a>
+        <a href="#">Leverans & returer</a>
+        <a href="#">Integritet</a>
+      </div>
+    </div>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- Cart Drawer -->
+  <div id="drawer" class="drawer" aria-hidden="true" role="dialog" aria-label="Varukorg">
+    <div class="backdrop" id="closeDrawer"></div>
+    <aside class="panel">
+      <div class="panel-head">
+        <h3>Din varukorg</h3>
+        <button class="icon-btn" id="drawerCloseBtn" aria-label="Stäng">✕</button>
+      </div>
+      <div id="cartList" class="cart-list"></div>
+      <div class="panel-foot">
+        <div class="totals">
+          <span>Totalt</span><strong id="cartTotal">0 kr</strong>
+        </div>
+        <button class="btn-primary" id="checkout">Till kassan</button>
+      </div>
+    </aside>
+  </div>
+
+  <script src="app.js"></script>
 </body>
 </html>
