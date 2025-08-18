@@ -1,22 +1,23 @@
 let cart = [];
 let total = 0;
 
-function addToCart(item, price) {
-  cart.push({ item, price });
+function addToCart(product, price) {
+  cart.push({ product, price });
   total += price;
   updateCart();
 }
 
 function updateCart() {
-  const cartList = document.getElementById("cart-items");
-  const totalDisplay = document.getElementById("total");
-  cartList.innerHTML = "";
+  const cartList = document.getElementById("cart-list");
+  const totalElement = document.getElementById("total");
 
-  cart.forEach(c => {
-    let li = document.createElement("li");
-    li.textContent = `${c.item} - ${c.price} kr`;
+  cartList.innerHTML = "";
+  cart.forEach(item => {
+    const li = document.createElement("li");
+    li.textContent = `${item.product} - ${item.price} SEK`;
     cartList.appendChild(li);
   });
 
-  totalDisplay.textContent = `Totalt: ${total} kr`;
+  totalElement.textContent = `Totalt: ${total} SEK`;
 }
+
